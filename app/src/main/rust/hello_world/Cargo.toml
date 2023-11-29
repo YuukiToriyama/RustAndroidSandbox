@@ -7,3 +7,4 @@ edition = "2021"
 name = "hello_world"
 
 [dependencies]
+jni = "0.21.1"
