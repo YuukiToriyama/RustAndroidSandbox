@@ -43,10 +43,6 @@ android {
             targets = listOf("arm", "arm64", "x86", "x86_64")
             pythonCommand = "python3"
         }
-        cmake {
-            path = file("src/main/cpp/CMakeLists.txt")
-            version = "3.22.1"
-        }
     }
     buildFeatures {
         viewBinding = true
