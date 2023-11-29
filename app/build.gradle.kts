@@ -1,6 +1,9 @@
+import com.nishtahir.CargoBuildTask
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.mozillaRustAndroidGradle)
 }
 
 android {
@@ -34,6 +37,12 @@ android {
         jvmTarget = "1.8"
     }
     externalNativeBuild {
+        cargo {
+            module = "src/main/rust/hello_world"
+            libname = "hello_world"
+            targets = listOf("arm", "arm64", "x86", "x86_64")
+            pythonCommand = "python3"
+        }
         cmake {
             path = file("src/main/cpp/CMakeLists.txt")
             version = "3.22.1"
@@ -42,6 +51,10 @@ android {
     buildFeatures {
         viewBinding = true
     }
+}
+
+tasks.preBuild.configure {
+    dependsOn.add(tasks.withType(CargoBuildTask::class.java))
 }
 
 dependencies {
