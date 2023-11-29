@@ -41,6 +41,7 @@ android {
             module = "src/main/rust/hello_world"
             libname = "hello_world"
             targets = listOf("arm", "arm64", "x86", "x86_64")
+            rustupChannel = "nightly"
             pythonCommand = "python3"
         }
     }
