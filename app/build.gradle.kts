@@ -28,6 +28,9 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
+        sourceSets["main"].kotlin {
+            srcDir("src/main/kotlin")
+        }
         jvmTarget = "1.8"
     }
     externalNativeBuild {
