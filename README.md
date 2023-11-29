@@ -1,0 +1,2 @@
+# RustAndroidSandbox
+Rustで書いたモジュールをAndroidで動かすサンプルです
