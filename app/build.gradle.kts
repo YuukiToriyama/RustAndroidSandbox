@@ -43,6 +43,9 @@ android {
             targets = listOf("arm", "arm64", "x86", "x86_64")
             rustupChannel = "nightly"
             pythonCommand = "python3"
+            exec = { spec, _ ->
+                spec.environment("OPENSSL_DIR", "/usr/local/opt/openssl")
+            }
         }
     }
     buildFeatures {

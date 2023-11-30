@@ -17,8 +17,12 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+    }
+
+    override fun onResume() {
+        super.onResume()
 
         // Example of a call to a native method
-        binding.sampleText.text = viewModel.sayHello("Rust")
+        binding.sampleText.text = viewModel.parseAddress("神奈川県横浜市港北区篠原北二丁目3-8")
     }
 }

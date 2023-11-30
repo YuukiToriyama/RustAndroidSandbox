@@ -7,5 +7,5 @@ class MainViewModel : ViewModel() {
         System.loadLibrary("hello_world")
     }
 
-    external fun sayHello(name: String): String
+    external fun parseAddress(address: String): String
 }
